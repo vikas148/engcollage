@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecom using flex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+}
+
+nav {
+    /* border: 2px solid green; */
+    /* padding: vmax; */
+    height: 4vmax;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.536);
+    position: sticky;
+    background-color: white;
+    z-index: 10000;
+    top: 0;
+}
+
+
+.left {
+    /* border: 2px solid salmon; */
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.left>a {
+    text-decoration: none;
+    color: crimson;
+    font-size: 2vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* border: 1px solid yellow; */
+}
+
+.mid {
+    width: 60%;
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    justify-content: space-evenly;
+    align-self: stretch;
+
+}
+
+.mid>a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4vmax;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* border: 1px solid rgb(26, 63, 196); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.mid>a:hover {
+    border-bottom: 2px solid crimson;
+    color: crimson;
+}
+
+.right {
+    width: 20%;
+    /* border: 2px solid salmon; */
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.right>img {
+    width: 2.5vmax;
+    margin: 1vmax;
+    cursor: pointer;
+}
+
+.home {
+    display: flex;
+    /* border: 1px solid red; */
+    height: 90vh;
+    background-image: linear-gradient(to right, rgb(124, 159, 192), rgb(124, 124, 212));
+
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+}
+
+#rightcontainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#rightcontainer>img {
+    margin-right: 5vmax;
+    filter: drop-shadow(0 0 20px black);
+}
+
+#leftcontainer {
+    display: flex;
+    flex-direction: column;
+    padding: 2vmax;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+
+#leftcontainer>h1 {
+    font-size: 4vmax;
+    padding-bottom: 80px;
+    /* border: 1px solid red; */
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#leftcontainer>h2 {
+    /* border: 1px solid red; */
+    font-size: 2vmax;
+    margin-top: -8%;
+    font-family: sans-serif;
+}
+
+#leftcontainer>p {
+    /* border: 1px solid red;   */
+    margin-left: 2%;
+    font-size: 1.2vmax;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#leftcontainer>a>button {
+    width: 11vmax;
+    padding: 0.6vmax;
+    border-radius: 2vmax;
+    border: none;
+    margin-left: 2%;
+    background-color: crimson;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+#leftcontainer>button:hover {
+    background-color: rgb(175, 6, 40);
+}
+
+#about_us {
+    background-image: linear-gradient(to right, rgb(124, 159, 192), rgb(124, 124, 212));
+}
+
+#about_us>h1 {
+    text-align: center;
+    margin: 5vmax auto;
+    font-size: 2.5vmax;
+    border-bottom: 5px solid crimson;
+    padding: 1vmax;
+    width: 25vw;
+}
+
+.aboutsection {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 80vw;
+    margin: auto;
+}
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about>img {
+    align-items: center;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.536);
+    border-radius: 13px;
+}
+
+
+/* ------------------depart section style----------------------- */
+
+#department {
+    /* height: 100vh; */
+    /* border: 1px solid green; */
+}
+
+#department>h1 {
+    text-align: center;
+    margin: 5vmax auto;
+    font-size: 2.5vmax;
+    border-bottom: 5px solid crimson;
+    padding: 1vmax;
+    width: 25vw;
+
+}
+
+.departmentcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: aquamarine; */
+    height: 100%;
+    width: 80vw;
+    margin: auto;
+}
+
+/* ---------------- department in depart section---------------- */
+.depart {
+    border: 2px solid crimson;
+    /* width: 22vmax; */
+    background-image: linear-gradient(to right, rgb(124, 159, 192), rgb(124, 124, 212));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.536);
+    border-radius: 5px;
+    height: 24vmax;
+    display: flex;
+
+    transition: all 0.5s;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vmax;
+}
+
+.depart>img {
+    width: 20vmax;
+}
+
+.depart>h4 {
+    margin: 2%;
+}
+
+.depart>h5 {
+    margin: 0px;
+}
+
+.depart:hover {
+    transform: translateY(-10px);
+}
+
+
+/* ----------------------------placement section------------ */
+
+
+#placements {
+    /* height: 100vh; */
+    /* border: 1px solid green; */
+    background-color: rgb(167, 167, 167);
+}
+
+#placements>h1 {
+    text-align: center;
+    margin: 5vmax auto;
+    font-size: 2.5vmax;
+    border-bottom: 5px solid crimson;
+    padding: 1vmax;
+    width: 25vw;
+
+}
+
+.placementcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: aquamarine; */
+    height: 100%;
+    width: 80vw;
+    margin: auto;
+}
+
+/* ---------------- department in depart section---------------- */
+.placement {
+    /* border: 2px solid crimson; */
+    /* width: 22vmax; */
+    /* background-image: linear-gradient(to right, rgb(124, 159, 192),rgb(124,124,212));  */
+    background-color: crimson;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.536);
+
+    height: 30vmax;
+    display: flex;
+    transition: all 0.5s;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vmax;
+}
+
+.placement>img {
+    width: 20vmax;
+}
+
+.placement>h4 {
+    margin: 2%;
+}
+
+.placement>h5 {
+    margin: 0px;
+}
+
+.placement:hover {
+    transform: translateY(-10px);
+}
+
+
+
+/* --------------contact us----------------- */
+
+/* ---------------------------------- footer style*/
+
+footer {
+    margin-top: 10vmax;
+    /* height: 10vmax; */
+    padding: 2vmax;
+    background-color: rgb(34, 32, 32);
+    color: white;
+    display: flex;
+}
+
+.leftfooter {
+    width: 20%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftfooter>h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.leftfooter>p {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.leftfooter>img {
+    width: 10vmax;
+    margin: 1vmax;
+    cursor: pointer;
+}
+
+.midfooter {
+    width: 60%;
+    /* border: 2px solid white; */
+    text-align: center;
+}
+
+.midfooter>h1 {
+    font-size: 4vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: crimson;
+}
+
+.midfooter>p {
+    max-width: 60%;
+    margin: 1vmax auto;
+}
+
+
+.rightfooter {
+    width: 20%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightfooter>h4 {
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4vmax;
+}
+
+
+.rightfooter>a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3vmax;
+    margin: 0.5vmax;
+}
+
+#footer_link {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#footer_link>a {
+    color: white;
+    text-decoration: none;
+}
+
+    </style>
+    
+</head>
+
+<body>
+    <nav>
+        <div class="left">
+            <a href="/">AICE</a>
+        </div>
+
+        <div class="mid">
+            <a href="#home">Home</a>
+            <a href="#about_us">About us</a>
+            <a href="#department">Department</a>
+            <a href="#placements">Placement</a>
+            <a href="#contactus">Contact us</a>
+        </div>
+        <div class="right">
+            <img src="/images/profile.svg" alt="profile">
+        </div>
+    </nav>
+
+
+
+    <section class="home" id="home">
+        <div class="container" id="leftcontainer">
+            <h1>American Internatinal Collage of Engineering</h1>
+            <h2>Where Dreams comes true !</h2>
+            <p>The problem in this business isn't to keep people from stealing your ideas; it's making them steal your
+                ideas!</p>
+            <a href="#department"><button>Explore Courses →</button></a>    
+            
+        </div>
+
+        <div class="container" id="rightcontainer">
+            <img src="./images/home.png" alt="">
+        </div>
+    </section>
+
+    <section id="about_us">
+        <h1>About Us</h1>
+        <div class="aboutsection">
+            <div class="about">
+                <img src="./images/collage pic.png" alt="collage_pic">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores aspernatur, illum consectetur
+                    dolorum
+                    at molestias neque tempora omnis quasi porro? Cupiditate eaque in minus at quasi dolorum excepturi
+                    mollitia atque recusandae veniam ratione vel consequatur sint inventore, nobis consequuntur?
+                    Voluptate.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iure sapiente dicta nemo
+                    pariatur.
+                    Culpa, quaerat voluptas non veritatis accusantium, quod, aut molestias recusandae illum officia
+                    neque.
+                    Sit ducimus assumenda, suscipit, amet consequatur hic, ab molestias culpa vero expedita laboriosam.
+                </p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="department">
+        <h1>Departments</h1>
+        <div class="departmentcontainer">
+            <!-- ---------------------------------------------->
+            <div class="depart">
+                <img src="./images/cse.png" alt="1stdepart">
+                <h4>Computer Science & Engineering</h4>
+
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="depart">
+                <img src="./images/ai.png" alt="1stdepart">
+                <h4>Artificial intelligence</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="depart">
+                <img src="./images/data.png" alt="1stdepart">
+                <h4>Data science</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="depart">
+                <img src="./images/civil.png" alt="1stdepart">
+                <h4>Civil Engineering</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="depart">
+                <img src="./images/mechanics.png" alt="1stdepart">
+                <h4>Machenical Engineering</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="depart">
+                <img src="./images/elect.png" alt="1stdepart">
+                <h4>Electrical engineering</h4>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="placements">
+        <h1>placements</h1>
+        <div class="placementcontainer">
+            <!-- ---------------------------------------------->
+            <div class="placement">
+                <img src="./images/3.webp" alt="1stdepart">
+                <h4>Placed at TCS</h4>
+
+            </div>
+            <!-- -------------------------------------- -->
+            <div class="placement">
+                <img src="./images/4.webp" alt="1stdepart">
+                <h4>Placed at Amazon</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="placement">
+                <img src="./images/5.webp" alt="1stdepart">
+                <h4>Placed at google</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="placement">
+                <img src="./images/6.jpg" alt="1stdepart">
+                <h4>Placed at wisflux</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="placement">
+                <img src="./images/7.webp" alt="1stdepart">
+                <h4>Placed at cyntexa</h4>
+
+            </div>
+            <!-- -------------------------------------------->
+            <!-- -------------------------------------- -->
+            <div class="placement">
+                <img src="./images/8.webp" alt="1stdepart">
+                <h4>Placed at microsoft</h4>
+
+            </div>
+        </div>
+    </section>
+
+   <section id="contactus">
+    <div class="container mt-5 shadow ">
+        <div class="row ">
+            <div class="col-md-4 bg-primary p-5 text-white order-sm-first order-last">
+                <h2>Let's get in touch</h2>
+                <p>We're open for any suggestion or just to have a chat</p>
+                <div class="d-flex mt-2">
+                    <i class="bi bi-geo-alt"></i>
+                    <p class="mt-3 ms-3">Address : Road 198 West 21th jaipur</p>
+                </div>
+                <div class="d-flex mt-2">
+                    <i class="bi bi-telephone-forward"></i>
+                    <p class="mt-4 ms-3">Phone : 8888888888</p>
+                </div>
+                <div class="d-flex mt-2">
+                    <i class="bi bi-envelope"></i>
+                    <p class="mt-4 ms-3">Email : contactform@gmail.com</p>
+                </div>
+              
+            </div>
+            <div class="col-md-8 p-5 ">
+                <h2>Get in touch</h2>
+                <form class="row g-3 contactForm mt-4">
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">First Name</label>
+                      <input type="email" class="form-control" id="inputEmail4" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Last Name</label>
+                      <input type="password" class="form-control" id="inputPassword4" required>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Subject</label>
+                      <input type="text" class="form-control" id="inputAddress" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Email Id</label>
+                        <input type="text" class="form-control" id="inputAddress" required>
+                      </div>
+                    <div class="col-md-6">
+                      <label for="inputCity" class="form-label">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">Contact Number</label>
+                        <input type="text" class="form-control" id="inputCity" required>
+                      </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+
+   </section>
+
+
+   
+
+    <footer>
+        <div class="leftfooter">
+            <h4>We make Engineers</h4>
+            <div id="footer_link">
+                <a href="#home">Home</a>
+                <a href="#about_us">About us</a>
+                <a href="#department">Department</a>
+                <a href="#placements">Research and placement</a>
+                <a href="#contactus">Contact us</a>
+            </div>
+            
+            
+        </div>
+
+        <div class="midfooter">
+            <h1>AICE</h1>
+            <p>The problem in this business isn't to keep people from stealing your ideas; it's making them steal your
+                ideas!</p>
+            <p>Copyright 2023 &copy; vikas bairwa</p>
+        </div>
+
+        <div class="rightfooter">
+            <h4>Follow Us</h4>
+            <a href="">Instagram</a>
+            <a href="">Youtube</a>
+            <a href="">Facebook</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+</body>
+
+</html>
